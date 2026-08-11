@@ -1,10 +1,9 @@
 # 4. Write a program to find sum of n numbers using recursion.
 
 def sumCalculation(n):
-    sum = 0
-    for i in range(1,n+1):
-        sum += i
-    return sum
+    if n == 0:
+        return 0
+    return n + sumCalculation(n - 1)
 
 def totalSum(n):
     res = sumCalculation(n)
@@ -12,3 +11,4 @@ def totalSum(n):
 
 n = int(input('Enter nth number: '))
 totalSum(n)
+
