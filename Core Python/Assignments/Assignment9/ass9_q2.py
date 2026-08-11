@@ -3,17 +3,17 @@
 def countDig(n):
     return len(str(n))
 
+def sumOfPowers(n, cnt):
+    if n == 0:
+        return 0
+    dig = n % 10
+    return (dig ** cnt) + sumOfPowers(n // 10, cnt)
+
 def checkArmstrong(n):
     cnt = countDig(n)
-    temp = n
-    sum = 0
+    result = sumOfPowers(n, cnt)
 
-    while (n > 0):
-        dig = n % 10
-        sum = sum + (dig ** cnt)
-        n = n // 10
-
-    if(sum == temp):
+    if result == n:
         print('Number is Armstrong number')
     else:
         print('Number is not Armstrong number')
