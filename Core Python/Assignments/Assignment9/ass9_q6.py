@@ -1,17 +1,13 @@
 # 6. Write a program to print Fibonacci series using recursion.
 
 def fibonacci(n):
-    res = totalFibonacci(n)
-    return res
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
 
 def totalFibonacci(n):
-    a = -1
-    b = 1
     for i in range(n):
-        c = a + b
-        print(c)
-        a = b 
-        b = c
+        print(fibonacci(i))
 
 n = int(input('Enter nth number for fibonacci series: '))
-fibonacci(n)
+totalFibonacci(n)
